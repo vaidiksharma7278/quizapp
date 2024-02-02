@@ -4,7 +4,7 @@ import { useGlobalContext } from "./context";
 import Home from "./Home";
 import Loading from "./Loading";
 import Timer from './Timer'
-import Modal from "./Model";
+import Result from "./Result";
 function QuizPage() {
   const {
     waiting,
@@ -14,8 +14,7 @@ function QuizPage() {
     correct,
     nextQuestion,
     checkAnswer,
-    setIsActive,
-    seconds
+    
   } = useGlobalContext();
   if (waiting) {
     return  <Home />;
@@ -40,7 +39,7 @@ function QuizPage() {
   return (
     
     <main>
-      <Modal />
+      <Result />
       <section className="quiz">
         <p className="correct-answers">
           correct answers:{correct}/{index}

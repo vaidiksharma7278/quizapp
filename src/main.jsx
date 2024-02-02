@@ -4,8 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { AppProvider } from './components/context.jsx'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
+import About from './components/About/About.jsx'
+import Contact from './components/Contact/Contact.jsx'
 import QuizPage from './components/QuizPage.jsx'
 
 const appRouter=createBrowserRouter([

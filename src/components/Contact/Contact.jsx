@@ -1,5 +1,5 @@
 import { useState } from "react";
-import contact from "../assets/contact.png";
+import contact from "./contact.png";
 import './contact.css'
 const Contact = () => {
   const [message, setMessage] = useState(false);

@@ -1,5 +1,5 @@
-import logo from "../assets/logo.png";
-import Timer from "./Timer";
+import logo from "./logo.png";
+import Timer from "../Timer";
 import './about.css'
 const About = () => {
   return (
