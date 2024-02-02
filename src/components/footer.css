@@ -1,0 +1,36 @@
+.footer {
+    margin: 10px;
+    width: auto;
+    text-align: center;
+    background-color: rgb(184, 212, 209);
+    padding: 20px 10px 20px;
+    border-radius: 5px;
+    box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .footer > i {
+    padding: 0 5px 0;
+    font-size: smaller;
+  }
+  
+  .footer > a {
+    font-weight: 700;
+    color: darkblue;
+  }
+  
+  .footer > a:hover {
+    color: rgb(224, 152, 17);
+  }
+  
+  .fa-heart {
+    color: darkred;
+  }
+  
+  .footer > strong {
+    padding-left: 5px;
+  }
+  
+  .footer > strong > span {
+    color: rgb(245, 162, 9);
+  }
+  

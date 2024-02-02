@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    width: auto;
+    background-color: rgb(184, 212, 209);
+    border-radius: 5px;
+    box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-weight: bold;
+}
+
+
+.header>img{
+padding-left: 10px;
+width: 100px;
+}
+.nav-items{   
+padding: 0 10px 0;
+width: auto;
+color: black;
+}
+
+.nav-items > ul{
+list-style-type: none;
+display: flex;
+}
+
+.nav-items > ul > li{
+padding: 40px 10px 0 0;
+font-size: large;
+cursor: pointer;
+}
+li:hover{
+    color: rgb(224, 152, 17);
+}

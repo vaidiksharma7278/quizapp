@@ -1,0 +1,75 @@
+.Quiz_Div {
+    width: 100%;
+  }
+  .buttons_div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .buttons_div button{
+    margin: 0;
+  }
+  .quiz_top_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0% 5%;
+  }
+  .quiz_top_div .time,
+  .quiz_top_div h2 {
+    font-size: 1rem;
+    box-shadow: rgb(20 1 1 / 15%) 0px 3px 15px;
+    padding: 10px 25px;
+    border-radius: 12px;
+    color: greenyellow;
+  }
+  .answerCss {
+    border: 1px solid gray;
+  }
+  h1,
+p,
+h4 {
+  background: -webkit-linear-gradient(#efffef, #8a8a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  text-align: center;
+}
+h1 {
+  font-size: 3.8rem;
+}
+p {
+  font-size: 1.5rem;
+  color: white;
+}
+h4 {
+  font-size: 1.8rem;
+}
+h5 {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+ul {
+  list-style: none;
+  margin: 6% 0;
+  padding: 0;
+}
+li {
+  font-size: 1.2rem;
+  border-radius: 20px;
+  margin: 2rem;
+  color: white;
+  box-shadow: rgb(20 1 1 / 15%) 0px 3px 15px;
+  padding: 16px 25px;
+}
+li:hover {
+  cursor: pointer;
+}
+ul li::before {
+  content: "\2022";
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}

@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import Header from "./components/Header";
+import QuizPage from "./components/QuizPage";
+import Footer from "./components/Footer";
+import { Outlet } from "react-router-dom";
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1> Quiz app</h1>
-      
-    </>
-  )
+   
+    <div>
+       <Header/>
+    <Outlet/>
+    <Footer/>
+    </div>
+  );
 }
 
-export default App
+export default App;
+
