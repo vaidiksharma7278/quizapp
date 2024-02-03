@@ -1,8 +1,6 @@
-# React + Vite
+# Quiz App Using React Js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a repository of Quiz App created using React Js and React Context.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Quiz Data is being fetching by Trivia Quiz API using axious for the better performance.
+Live Server-https://quizapp-five-pi.vercel.app/
