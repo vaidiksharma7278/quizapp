@@ -3,7 +3,7 @@ import { useGlobalContext } from "./context";
 
 import Home from "./Home";
 import Loading from "./Loading";
-import Timer from './Timer'
+
 import Result from "./Result";
 function QuizPage() {
   const {
@@ -14,6 +14,9 @@ function QuizPage() {
     correct,
     nextQuestion,
     checkAnswer,
+    startTimer,
+    seconds,
+    setSeconds
     
   } = useGlobalContext();
   if (waiting) {
@@ -23,18 +26,18 @@ function QuizPage() {
     return <Loading />;
   }
   const { question, incorrect_answers, correct_answer } = questions[index];
-
   
-  // const answers = [...incorrect_answers, correct_answer];
+   const answers = [...incorrect_answers, correct_answer];
+ 
 
-  let answers = [...incorrect_answers];
-  const tempIndex = Math.floor(Math.random() * 4);
-  if (tempIndex === 3) {
-    answers.push(correct_answer);
-  } else {
-    answers.push(answers[tempIndex]);
-    answers[tempIndex] = correct_answer;
-  }
+  // let answers = [...incorrect_answers];
+  // const tempIndex = Math.floor(Math.random() * 4);
+  // if (tempIndex === 3) {
+  //   answers.push(correct_answer);
+  // } else {
+  //   answers.push(answers[tempIndex]);
+  //   answers[tempIndex] = correct_answer;
+  // }
   
   return (
     
@@ -42,9 +45,9 @@ function QuizPage() {
       <Result />
       <section className="quiz">
         <p className="correct-answers">
-          correct answers:{correct}/{index}
+          correct answers:{correct}/{questions.length}
         </p>
-       
+       {startTimer && <h2>Time Left - 00 : {seconds < 10 ? `0${seconds}` : seconds}</h2>}
         
         <article className="container">
           <h2 dangerouslySetInnerHTML={{ __html: question }} />

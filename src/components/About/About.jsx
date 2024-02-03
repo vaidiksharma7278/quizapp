@@ -1,5 +1,4 @@
 import logo from "./logo.png";
-import Timer from "../Timer";
 import './about.css'
 const About = () => {
   return (
@@ -11,7 +10,7 @@ const About = () => {
         <h4>
           "Better test your knowledge with<span>Quiz</span> App"
         </h4>
-        <Timer/>
+        
       </div>
       <div className="about-right">
         <img src={logo} alt="Logo" />

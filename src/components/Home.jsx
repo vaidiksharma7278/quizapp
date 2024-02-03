@@ -1,6 +1,5 @@
 import React from "react";
 import { useGlobalContext } from "./context";
-import Header from "./Header/Header"
 const Home = () => {
   const { quiz, handleChange, handleSubmit, error } = useGlobalContext();
   return (
