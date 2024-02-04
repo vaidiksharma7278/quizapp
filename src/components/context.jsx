@@ -106,7 +106,7 @@ const AppProvider = ({ children }) => {
     }
     setTimeout(() => {
       nextQuestion();
-    }, 3000);
+    }, 2000);
     
   };
 
