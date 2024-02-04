@@ -21,6 +21,25 @@ const AppProvider = ({ children }) => {
   const [startTimer, setStartTimer] = useState(false);
   const [seconds,setSeconds]=useState("");
 
+  useEffect(() => {
+    let interval = null;
+    interval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds((seconds) => seconds - 1);
+      }
+
+      if (seconds === 0) {
+          setSeconds(20);
+          nextQuestion()
+        } 
+      
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [seconds]);
+
   const fetchQuestions = async (url) => {
     setLoading(true);
     setWaiting(false);
@@ -41,35 +60,33 @@ const AppProvider = ({ children }) => {
     }
   };
 
- 
+  // let yellow = '#ffc800';
+  // const [bgColor, setBgColor] = useState(yellow);
+  //  const changeColor =()=>{
+  //     let green = '#3BA544';
+  //     setBgColor(green);
+  //   }
+   const [correctanswer,setCorrectanswer]=useState(false);
+  const [wrongAnswer,setWronganswer]=useState(false);
+  const [disabledanswer,setdisabledanswer]=useState(true);
+   const correctAnswerClass = correctanswer ? 'correct-answer' : '';
+   const wrongAnswerClass =  wrongAnswer? 'wrong-answer' : '';
+  const disabledClass= disabledanswer?'disabled-answer' : '';
   
-    useEffect(() => {
-      let interval = null;
-      interval = setInterval(() => {
-        if (seconds > 0) {
-          setSeconds((seconds) => seconds - 1);
-        }
   
-        if (seconds === 0) {
-            setSeconds(20);
-            nextQuestion()
-          } 
-        
-      }, 1000);
-  
-      return () => {
-        clearInterval(interval);
-      };
-    }, [seconds]);
   const nextQuestion = () => {
     setIndex((oldIndex) => {
       const index = oldIndex + 1;
       if (index > questions.length - 1) {
-        
+        setCorrectanswer(false);
+        setWronganswer(false);
+        setdisabledanswer(true)
         openModal();
         return 0;
       } else {
-
+          setCorrectanswer(false);
+          setWronganswer(false);
+          setdisabledanswer(true)
           setSeconds(20);
         return index;
 
@@ -80,9 +97,17 @@ const AppProvider = ({ children }) => {
   const checkAnswer = (value) => {
     if (value) {
       setCorrect((oldState) => oldState + 1);
+      setCorrectanswer(true);
+      setdisabledanswer(false);
+    } 
+    if(!value){
+      setWronganswer(true);
+      setdisabledanswer(false);
     }
-
-    nextQuestion();
+    setTimeout(() => {
+      nextQuestion();
+    }, 3000);
+    
   };
 
   const openModal = () => {
@@ -130,7 +155,11 @@ const AppProvider = ({ children }) => {
         handleSubmit,
         startTimer,
         setStartTimer,
-        seconds
+        seconds,
+        
+        correctAnswerClass,
+        wrongAnswerClass,
+        disabledClass
       }}
     >
       {children}
